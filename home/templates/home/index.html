@@ -1,0 +1,28 @@
+{% extends 'home/basic.html'%}
+
+{% block title %} ImageHub {% endblock %}
+
+{% block body %} <br>
+
+<center> <h3> IMAGE HUB </h3> </center>
+<form action="{% url 'Submissions'%}" method="POST"> {% csrf_token %}
+    <div class="form-group">
+        <div class="container">
+            <label for="exampleInputEmail1">IMAGE NAME</label>
+            <input type="name" name="img_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Image Name" required = "True"> <br>
+        
+            <div class="form-group">
+            <label for="exampleInputPassword1">IMAGE DESCRIPTION</label>
+            <input type="text" name="img_desc" class="form-control" id="exampleInputPassword1" placeholder="Enter Image Description" required = "True"> <br>
+
+            <div class="form-group">
+            <label for="exampleInputPassword1">IMAGE BY</label>
+            <input type="name" name="img_by" class="form-control" id="exampleInputPassword1" placeholder="Image By" required = "True"> <br>
+
+            <label for="exampleInputEmail1">IMAGE URL</label>
+            <input type="url" name="img_url" class="form-control form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Image URL" required = "True"> <br>
+            <button type="submit" class="btn btn-primary">Submit</button> <br>  
+        </div>
+    </div>
+</form>
+{% endblock %}

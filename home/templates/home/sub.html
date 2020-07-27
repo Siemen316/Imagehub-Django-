@@ -1,0 +1,31 @@
+{% extends 'home/basic.html'%}
+
+{% block title %} ImageHub | Submissions {% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+
+    {% for shows in show %}
+        <div class="w3-row-center">
+                <div class="w3-col s12 m4 14">
+                    <div class="w3-card-4 w3-margin w3-white">
+                        <img src= "{{shows.img_url}}" alt="Nature" style="width:100%">
+                            <div class="w3-container">
+                                <h3> <b> {{shows.img_name}} </b> </h3>
+                            </div>
+                                <div class="w3-container">
+                                    <p>{{shows.img_desc}}</p>
+                                </div>
+                                    <div class="w3-container">
+                                        <p> IMAGE BY: {{shows.img_by}}</p>
+                                    </div>
+                    </div>
+                </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
